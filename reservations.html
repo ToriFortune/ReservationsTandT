@@ -18,8 +18,7 @@
                 <h1 class="text-center"><b><i>  Welcome to T&Ts</i></b>
                 </h1>
                 <br>
-            <h2 class="text-center">
-            </h2 class="text-center"> We only have 10 tables! Book your seat before they all are gone!</h2>
+           
             
             
             <br>
@@ -40,22 +39,30 @@
                     <a href="/waitlist">Wait List</a>
                 </div>
               </footer>
-              <form>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <div class="card">
+                  <div class="card-header">
+                   Reserve a table
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                  </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                  <div class="card-body">
+                    <form role="form">
+                      <div class="form-group">
+                        <label for="reserve-name">Patron's n ame</label>
+                        <input type="text" class="form-control" id="reserve-name">
+                      </div>
+                      <div class="form-group">
+                        <label for="reserve-phone">Phone Number</label>
+                        <input type="text" class="form-control" id="reserve-phone">
+                      </div>
+                      <div class="form-group">
+                        <label for="reserve-email">Email</label>
+                        <input type="text" class="form-control" id="reserve-email">
+                      </div>
+                      <div class="form-group">
+                        <label for="reserve-unique-id">Unique ID</label>
+                        <input type="text" class="form-control" id="reserve-unique-id">
+                      </div>
+                      <button type="submit" class="btn btn-primary submit">Submit</button>
+                    </form>
     </div>
     
 </body>
