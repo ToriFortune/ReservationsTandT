@@ -7,7 +7,10 @@ const PORT = process.env.PORT || 3000;
 
 const restaurant = new Restaurant();
 
-restaurant.addReservation("Tori", "234-2343", "asdklj@asdlk", 42);
+restaurant.addReservation("Tori", "234-2343", "wife@boss.net", 42);
+restaurant.addReservation("Suha", "234-2343", "grumpy@suha.grumps", 16);
+restaurant.addReservation("Trey", "234-2343", "Meany@trey.grumps", 21);
+restaurant.addReservation("Greg", "234-2343", "Silent@greg.dev", 1);
 
 console.log(restaurant.reservations);
 
@@ -19,5 +22,13 @@ app.listen(PORT, function() {
 });
 
 app.get("/", (req, res) => {
-  res.send("<h1>Suha is cranky!!!</h1>");
+  res.sendFile(path.join(__dirname, "index.html"));
 });
+
+app.post("/tables", (req, res) => {
+  const name = req.newReservation.name;
+  const phoneNumber = req.newReservation.phoneNumber;
+  const email = req.newReservation.email;
+  const id = req.newReservation.id;
+  restaurant.addReservation(name, phoneNumber, email, id);
+})
