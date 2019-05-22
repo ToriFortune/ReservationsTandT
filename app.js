@@ -6,6 +6,7 @@ const Restaurant = require("./restaurant");
 const PORT = process.env.PORT || 3000;
 
 const restaurant = new Restaurant();
+const waitlist = new Restaurant();
 
 restaurant.addReservation("Tori", "234-2343", "wife@boss.net", 42);
 restaurant.addReservation("Suha", "234-2343", "grumpy@suha.grumps", 16);
@@ -25,6 +26,14 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
+app.get("/reservations", (req, res) => {
+  res.sendFile(path.join(__dirname, "reservations.html"));
+});
+
+app.get("/currentres", (req, res) => {
+  res.sendFile(path.join(__dirname, "currentres.html"));
+});
+
 app.post("/tables", (req, res) => {
   const name = req.newReservation.name;
   const phoneNumber = req.newReservation.phoneNumber;
@@ -32,3 +41,11 @@ app.post("/tables", (req, res) => {
   const id = req.newReservation.id;
   restaurant.addReservation(name, phoneNumber, email, id);
 })
+
+app.get("/tables", (req, res) => {
+  res.json(restaurant.reservations);
+});
+
+app.get("/waitlst", (req, res) => {
+  res.json(waitlist.reservations); 
+});
