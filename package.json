@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ToriFortune/ReservationsTandT#readme",
   "dependencies": {
     "express": "^4.17.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "uuid": "^3.3.2"
   }
 }
